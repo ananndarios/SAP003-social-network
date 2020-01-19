@@ -23,7 +23,7 @@ function load() {
   const user = firebase.auth().currentUser;
   postCollection.where('user', '==', user.uid).get().then((snap) => {
     snap.forEach((post) => {
-      addPost(post, post.id);
+      addPost(post);
     });
   });
 }
