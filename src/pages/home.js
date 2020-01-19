@@ -1,3 +1,5 @@
+/* eslint-disable no-alert */
+/* eslint-disable no-use-before-define */
 import Button from '../components/button.js';
 import Input from '../components/input.js';
 
@@ -10,12 +12,16 @@ function Home() {
     <div class="banner"></div>
   <h2> Faça login na sua conta </h2>
   <form>
-  ${Input({ placeholder: 'Email', type: 'email', class: 'js-email-input'})}
-  ${Input({ placeholder: 'Senha', type: 'password', class: 'js-password-input'})}
-  ${Button({ id: 'button', title: 'Entrar', onClick: buttonLogin, class: 'bntentrar' })
+  ${Input({ placeholder: 'Email', type: 'email', class: 'js-email-input' })}
+  ${Input({ placeholder: 'Senha', type: 'password', class: 'js-password-input' })}
+  ${Button({
+    id: 'button', title: 'Entrar', onClick: buttonLogin, class: 'bntentrar',
+  })
 }<br>
   
-  ${Button({ id: 'google-btn', onClick:googleLogin, class: 'bntgoogle', title: '<img src= img/google.png width="60" height="70"> '})
+  ${Button({
+    id: 'google-btn', onClick: googleLogin, class: 'bntgoogle', title: '<img src= img/google.png width="60" height="70"> ',
+  })
 }
   
   </form><br>
@@ -31,7 +37,7 @@ function buttonLogin() {
   const password = document.querySelector('.js-password-input').value;
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then((firebaseUser) => {
-      window.location.hash= '#feed';
+      window.location.hash = '#feed';
     })
     .catch((error) => {
       const errorCode = error.code;
@@ -53,7 +59,7 @@ function googleLogin() {
     // The signed-in user info.
     let user = result.user;
     // ...
-    window.location.hash='#feed';
+    window.location.hash = '#feed';
   }).catch((error) => {
     // Handle Errors here.
     let errorCode = error.code;

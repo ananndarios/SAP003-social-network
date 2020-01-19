@@ -7,11 +7,11 @@ function Button(props) {
 }
 
 window.button = {
-  handleClick: (event,callback) => {
+  handleClick: (event, callback) => {
     event.preventDefault();
     callback(event);
   },
-  component: Button
+  component: Button,
 };
 
 export default Button;
