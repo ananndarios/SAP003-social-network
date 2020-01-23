@@ -32,13 +32,13 @@ function likePost(event) {
   const id = event.target.dataset.id;
   const likeButton = document.querySelector(`#gostei${id}`);
   firebase.firestore().collection('posts').doc(id).get()
-    .then(((snap) => {
-      const counter = snap.data().likes + 1;
+    .then((snap) => {
+      const counter = snap.likes + 1;
       firebase.firestore().collection('posts').doc(id).update({
         likes: counter,
       });
       likeButton.innerText = `Likes:${counter}`;
-    }));
+    });
 }
 
 window.load = load;
@@ -82,7 +82,7 @@ function formSubmit() {
       const printPost = document.querySelector('.postdiv');
       const template = `
     <div class='postCard'>
-    <div class'postLikes' id='gostei${postId}'>${id}    <p class='likes'>Likes:${post.data().likes}</p></div>
+    <div class'postLikes' id='gostei${postId}'>${id}    <p class='likes'>Likes:${post.likes}</p></div>
     <div class='buttons'>
     ${window.button.component({
     dataId: postId, class: 'like', title: '❤️', onClick: likePost,
@@ -92,7 +92,7 @@ function formSubmit() {
   })}
     </div>
     <p class='text'>    
-    ${post.data().text}  
+    ${post.text}  
     </p>
     
   </div>
