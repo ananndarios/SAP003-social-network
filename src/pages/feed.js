@@ -93,9 +93,9 @@ function addPost (post, postId) {
     <div class='postCard'>
     ${Button({dataId: postId, class: 'delete', title:'🗑️', onClick: deleteButton})}
     ${Button({dataId: postId,  class: 'like', title:'❤️', onClick: likePost})}  
+
     <div class'postLikes' id='gostei${postId}'>${id}    
-    <p class='likes'>Likes:${post.data().likes}</p></div>
-     
+      <p class='likes'>Likes:${post.data().likes}</p></div>
       <p class='text'>    
       ${post.data().text}  
       </p>
