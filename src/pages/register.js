@@ -1,5 +1,5 @@
-import Button from '../components/button.js';
-import Input from '../components/input.js';
+import Button from '../components/Button.js';
+import Input from '../components/Input.js';
 
 function register(){
     const template = `
@@ -28,8 +28,8 @@ function register(){
   function buttonRegister() {
     const email = document.querySelector('.js-email-input').value;
     const password = document.querySelector('.js-password-input').value;
-    const name = document.querySelector('.username').value;
-    firebase.auth().createUserWithEmailAndPassword(email, password, name)
+    // const name = document.querySelector('.username').value;
+    firebase.auth().createUserWithEmailAndPassword(email, password)
     .then(function(firebaseUser) {
         window.location.hash = '#feed'
     })

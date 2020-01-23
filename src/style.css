@@ -72,12 +72,12 @@ nav{
 input{
   display: flex;
   border-radius:4px;
-  -moz-border-radius:4px;
-  -webkit-border-radius:8px;
+  /* -moz-border-radius:4px;
+  -webkit-border-radius:8px; */
   box-shadow: 1px 1px 2px #333333;
-  -moz-box-shadow: 1px 1px 2px #333333;
-  -webkit-box-shadow: 1px 1px 2px #333333;
-  background: rgba(255,255,255,0.7);
+  /* -moz-box-shadow: 1px 1px 2px #333333;
+  -webkit-box-shadow: 1px 1px 2px #333333; */
+  background: gray;
   border:1px solid #000000;
   width:250px;
   height: 30px;

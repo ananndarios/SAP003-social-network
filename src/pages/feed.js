@@ -1,7 +1,5 @@
-import Button from '../components/button.js';
-import Input from '../components/input.js';
-
-
+import Button from '../components/Button.js';
+import Input from '../components/Input.js';
 
 function timeline(){
     const template = `
@@ -17,7 +15,7 @@ function timeline(){
      <div class="line3"></div>
    </div>
 </nav>
-<h2> Ola, seja bem-vindo! </h2>
+<h2> Olá, seja bem-vindo! </h2>
     <form class='postForm'><br>
     ${Input({placeholder:'Digite sua mensagem', type: 'text', class:'post', id:'textPost'})}
     ${Button({id: 'postForm', class: 'bntpost', title: 'Postar', onClick: formSubmit})}<br>
@@ -25,8 +23,6 @@ function timeline(){
     <ul class='postdiv'></ul>
     ${Button({id:'button', title:'Logout', class:'buttonlogout', onClick:logout})}
     `
-
-    load()
       return template;
   }
 
@@ -108,20 +104,6 @@ function addPost (post, postId) {
     `
   printPost.innerHTML += template
 }
-
-/*function profile() {
-  const user = firebase.auth().currentUser;
-    
-if (user != null) {
-  name = user.displayName;
-  const email = user.email;
-  photoUrl = user.photoURL;
-  emailVerified = user.emailVerified;
-  uid = user.uid;  
-  console.log(email)
-}
-}*/
-
 
 function deleteButton() {
   const id = event.target.dataset.id;

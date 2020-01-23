@@ -1,5 +1,5 @@
-import Button from '../components/button.js';
-import Input from '../components/input.js';
+import Button from '../components/Button.js';
+import Input from '../components/Input.js';
 
 
 function Home() {
@@ -21,7 +21,8 @@ function Home() {
   
   <p class="register-link">Não é cadastrado? <a class="register-hash" href="#register">Registre-se.</a></p>
   `
-    return template;
+
+  return template;
 };
 export default Home;
 
@@ -71,3 +72,4 @@ function googleLogin () {
     // ...
   });
 }
+

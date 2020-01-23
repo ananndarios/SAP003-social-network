@@ -1,0 +1,29 @@
+[debug] [2020-01-23T14:07:50.290Z] ----------------------------------------------------------------------
+[debug] [2020-01-23T14:07:50.296Z] Command:       /home/anannda/.nvm/versions/node/v12.11.0/bin/node /home/anannda/.nvm/versions/node/v12.11.0/bin/firebase serve
+[debug] [2020-01-23T14:07:50.296Z] CLI Version:   7.12.1
+[debug] [2020-01-23T14:07:50.297Z] Platform:      linux
+[debug] [2020-01-23T14:07:50.297Z] Node Version:  v12.11.0
+[debug] [2020-01-23T14:07:50.375Z] Time:          Thu Jan 23 2020 11:07:50 GMT-0300 (GMT-03:00)
+[debug] [2020-01-23T14:07:50.375Z] ----------------------------------------------------------------------
+[debug] [2020-01-23T14:07:50.375Z] 
+[debug] [2020-01-23T14:07:50.446Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-01-23T14:07:50.446Z] > authorizing via signed-in user
+[debug] [2020-01-23T14:07:50.447Z] [iam] checking project rede-social-7c6e9 for permissions ["firebase.projects.get"]
+[debug] [2020-01-23T14:07:50.451Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-01-23T14:07:50.452Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-01-23T14:07:50.825Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-23T14:07:50.871Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-7c6e9:testIamPermissions  
+
+[debug] [2020-01-23T14:07:51.867Z] <<< HTTP RESPONSE 200
+[debug] [2020-01-23T14:07:51.871Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-7c6e9  
+ 
+[debug] [2020-01-23T14:07:52.290Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/anannda/Área de Trabalho/Laboratória/Rede Social/SAP003-social-network'...
+[info] 
+[debug] [2020-01-23T14:07:52.296Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-7c6e9/webApps/-/config  
+ 
+[debug] [2020-01-23T14:07:53.580Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
