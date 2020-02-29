@@ -20,10 +20,10 @@ function deleteButton(event) {
 
 function load() {
   const postCollection = firebase.firestore().collection('posts');
-  const user = firebase.auth().currentUser;
-  postCollection.where('user', '==', user.uid).get().then((snap) => {
+  // const user = firebase.auth().currentUser;
+  postCollection.get().then((snap) => {
     snap.forEach((post) => {
-      addPost(post);
+      console.log(post);
     });
   });
 }
@@ -44,7 +44,7 @@ function likePost(event) {
 window.load = load;
 
 function addPost(post, postId) {
-  const printPost = document.querySelector('.postdiv');
+  const printPost = document.querySelector('.postSection');
   const id = firebase.auth().currentUser.uid;
   const template = `
    
@@ -69,17 +69,18 @@ function addPost(post, postId) {
 
 
 function formSubmit() {
-  const text = document.querySelector('.post').value;
+  const text = document.querySelector('.postText').value;
   const id = firebase.auth().currentUser.uid;
   const post = {
     text,
     user: id,
+    date: new Date(),
     likes: 0,
     comments: [],
   };
   firebase.firestore().collection('posts').add(post)
     .then((postId) => {
-      const printPost = document.querySelector('.postdiv');
+      const printPost = document.querySelector('.postSection');
       const template = `
     <div class='postCard'>
     <div class'postLikes' id='gostei${postId}'>${id}    <p class='likes'>Likes:${post.likes}</p></div>
@@ -122,7 +123,7 @@ function timeline() {
         <form class='post'>
             ${Input({ class: 'postText', placeholder: 'O que você está pensando?', type: 'textarea' })}
             ${Button({
-    class: 'sendPost', title: 'Postar', id: 'button',
+    class: 'sendPost', title: 'Postar', id: 'button', onClick: formSubmit,
   })}
         </form>
     </section>

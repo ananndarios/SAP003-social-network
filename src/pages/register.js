@@ -25,16 +25,16 @@ function register() {
     class: 'register', title: 'Registrar', id: 'button', onClick: buttonRegister,
   })}
     </form>
-    <a href='#home'>Voltar</a>
+    <a class= 'back' href= ${goToLogin}>Voltar</a>
     </main>
   `;
 
   return template;
 }
 
-// function goToLogin() {
-//   window.location.hash = '#home';
-// }
+function goToLogin() {
+  window.location.hash = '#home';
+}
 
 function buttonRegister() {
   const email = document.querySelector('.js-email-input').value;

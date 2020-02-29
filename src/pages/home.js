@@ -5,10 +5,10 @@ import Input from '../components/input.js';
 
 
 function buttonLogin() {
-  const email = document.querySelector('.js-email-input').value;
-  const password = document.querySelector('.js-password-input').value;
+  const email = document.querySelector('.email').value;
+  const password = document.querySelector('.password').value;
   firebase.auth().signInWithEmailAndPassword(email, password)
-  .then((firebaseUser) => {
+    .then((firebaseUser) => {
       window.location.hash = '#feed';
     })
     .catch((error) => {
@@ -21,7 +21,7 @@ function buttonLogin() {
         throw alert('Senha incorreta');
       }
     });
-  }
+}
 
 function googleLogin() {
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -44,6 +44,10 @@ function googleLogin() {
   });
 }
 
+function goToRegister() {
+  window.location.hash = '#home';
+}
+
 function Home() {
   const template = `
     <header>
@@ -63,8 +67,8 @@ function Home() {
     class: 'login', title: 'Entrar', id: 'button', onClick: buttonLogin,
   })}
   </form>
-    <p>Ou entre com o ${Button({ class: 'google', onClick: googleLogin, title: '<img src= ./img/icon.png width="30">' })}</p>
-    <p>Não tem conta? <a href='#register'>Registre-se</a>
+    <p class= 'glogin'>Ou entre com o ${Button({ class: 'google', onClick: googleLogin, title: '<img src= ./img/icon.png width="30">' })}</p>
+    <p class= 'glogin'>Não tem conta? <a href=${goToRegister}>Registre-se</a>
     </main>
     
   `;
