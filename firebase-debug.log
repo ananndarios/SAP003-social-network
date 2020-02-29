@@ -1,0 +1,25 @@
+[debug] [2020-02-29T17:52:16.306Z] ----------------------------------------------------------------------
+[debug] [2020-02-29T17:52:16.309Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2020-02-29T17:52:16.309Z] CLI Version:   7.10.0
+[debug] [2020-02-29T17:52:16.309Z] Platform:      linux
+[debug] [2020-02-29T17:52:16.309Z] Node Version:  v12.13.1
+[debug] [2020-02-29T17:52:16.310Z] Time:          Sat Feb 29 2020 14:52:16 GMT-0300 (GMT-03:00)
+[debug] [2020-02-29T17:52:16.310Z] ----------------------------------------------------------------------
+[debug] [2020-02-29T17:52:16.310Z] 
+[debug] [2020-02-29T17:52:16.318Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-02-29T17:52:16.318Z] > authorizing via signed-in user
+[debug] [2020-02-29T17:52:16.318Z] [iam] checking project rede-social-7c6e9 for permissions ["firebase.projects.get"]
+[debug] [2020-02-29T17:52:16.321Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/rede-social-7c6e9:testIamPermissions  
+
+[debug] [2020-02-29T17:52:17.393Z] <<< HTTP RESPONSE 200
+[debug] [2020-02-29T17:52:17.397Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-7c6e9  
+ 
+[debug] [2020-02-29T17:52:18.677Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/ester/ester-git/SAP003-social-network'...
+[info] 
+[debug] [2020-02-29T17:52:18.682Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/rede-social-7c6e9/webApps/-/config  
+ 
+[debug] [2020-02-29T17:52:20.049Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: src
+[info] ✔  hosting: Local server: http://localhost:5000
