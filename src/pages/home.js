@@ -4,39 +4,11 @@ import Button from '../components/button.js';
 import Input from '../components/input.js';
 
 
-function Home() {
-  const template = `
-  <div class="logotipo">
-    <h1 class="text-center">ALCATEIA</h1>
-  </div>
-    <div class="banner"></div>
-  <h2> Faça login na sua conta </h2>
-  <form>
-  ${Input({ placeholder: 'Email', type: 'email', class: 'js-email-input' })}
-  ${Input({ placeholder: 'Senha', type: 'password', class: 'js-password-input' })}
-  ${Button({
-    id: 'button', title: 'Entrar', onClick: buttonLogin, class: 'bntentrar',
-  })
-}<br>
-  
-  ${Button({
-    id: 'google-btn', onClick: googleLogin, class: 'bntgoogle', title: '<img src= img/google.png width="60" height="70"> ',
-  })
-}
-  
-  </form><br>
-  
-  <p class="register-link">Não é cadastrado? <a class="register-hash" href="#register">Registre-se.</a></p>
-  `;
-  return template;
-}
-export default Home;
-
 function buttonLogin() {
   const email = document.querySelector('.js-email-input').value;
   const password = document.querySelector('.js-password-input').value;
   firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((firebaseUser) => {
+  .then((firebaseUser) => {
       window.location.hash = '#feed';
     })
     .catch((error) => {
@@ -49,7 +21,7 @@ function buttonLogin() {
         throw alert('Senha incorreta');
       }
     });
-}
+  }
 
 function googleLogin() {
   const provider = new firebase.auth.GoogleAuthProvider();
@@ -71,3 +43,32 @@ function googleLogin() {
     // ...
   });
 }
+
+function Home() {
+  const template = `
+    <header>
+      <img src='../img/shewolf.png'>
+      <h1>Alcatéia</h1>
+      <h3>Bem-vinda!</h3>
+    </header>
+    <main class='home'>
+    <form>
+    ${Input({
+    id: 'emailLogin', class: 'email', placeholder: 'Email', type: 'email', name: 'email',
+  })}
+    ${Input({
+    id: 'passwordLogin', class: 'password', placeholder: 'Senha', type: 'password', name: 'password',
+  })}
+    ${Button({
+    class: 'login', title: 'Entrar', id: 'button', onClick: buttonLogin,
+  })}
+  </form>
+    <p>Ou entre com o ${Button({ class: 'google', onClick: googleLogin, title: '<img src= ./img/icon.png width="30">' })}</p>
+    <p>Não tem conta? <a href='#register'>Registre-se</a>
+    </main>
+    
+  `;
+
+  return template;
+}
+export default Home;

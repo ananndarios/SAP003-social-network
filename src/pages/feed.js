@@ -106,50 +106,30 @@ window.likePost = likePost;
 window.deleteButton = deleteButton;
 
 
-// /*function profile() {
-//   const user = firebase.auth().currentUser;
-
-//   if (user != null) {
-//   name = user.displayName;
-//   const email = user.email;
-//   photoUrl = user.photoURL;
-//   emailVerified = user.emailVerified;
-//   uid = user.uid;
-//   console.log(email)
-// }
-// }*/
-
-
 function timeline() {
   const template = `
-    <nav>
-    <ul class="nav-links">
-     <li><a href="#">HOME</a></li>
-     <li><a href="#">ALCATEIA</a></li>
-     <li><a href="#">SAIR</a></li>          
-   </ul>
-   <div class="burger">
-     <div class="line1"></div>
-     <div class="line2"></div>
-     <div class="line3"></div>
-   </div>
-</nav>
-<h2> Ola, seja bem-vindo! </h2>
-    <form class='postForm'><br>
-    ${Input({
-    placeholder: 'Digite sua mensagem', type: 'text', class: 'post', id: 'textPost',
+    <header class='feed'>
+        <h1>Alcateia</h1>
+        ${Button({
+    class: 'logout', title: 'Sair', onClick: logout,
   })}
-    ${Button({
-    id: 'postForm', class: 'bntpost', title: 'Postar', onClick: formSubmit,
-  })}<br>
-    </form>
-    <ul class='postdiv'></ul>
-    ${Button({
-    id: 'button', title: 'Logout', class: 'buttonlogout', onClick: logout,
+    </header>
+    <div class='user'>
+        <div class='photo'></div>
+        <p>Fulana da Silva</p>
+    </div>
+    <section class='align'>
+        <form class='post'>
+            ${Input({ class: 'postText', placeholder: 'O que você está pensando?', type: 'textarea' })}
+            ${Button({
+    class: 'sendPost', title: 'Postar', id: 'button',
   })}
+        </form>
+    </section>
+    <section class='postSection'></section>
     `;
 
-  load();
+
   return template;
 }
 

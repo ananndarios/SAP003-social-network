@@ -5,31 +5,36 @@ import Input from '../components/input.js';
 
 function register() {
   const template = `
-    <div class="logotipo">
-       <h4 class="text-center">ALCATEIA</h4>
-    </div>
-    
-    <div class="banner"></div>
-    ${Button({ id: 'voltar', title: 'Voltar', onClick: goToLogin })}
-    
-
-    <h2> Crie a sua conta </h2>
-    
-  <form>
-    ${Input({ placeholder: 'Digite seu nome', type: 'text', class: 'username' })}
-    ${Input({ placeholder: 'E-mail', type: 'email', class: 'js-email-input' })}
-    ${Input({ placeholder: 'Senha', type: 'password', class: 'js-password-input' })}
-    ${Button({
-    class: 'cadastrar', id: 'button', title: 'Cadastrar', onClick: buttonRegister,
+    <header>
+      <img src='../img/shewolf.png'>
+      <h1>Alcatéia</h1>
+      <h3>Bem-vinda!</h3>
+    </header>
+    <main class='register'>
+    <form>
+    ${Input({
+    id: 'nameReg', placeholder: 'Nome', type: 'text', name: 'name',
   })}
-  </form>
-       `;
+    ${Input({
+    id: 'emailReg', placeholder: 'Email', type: 'email', name: 'email',
+  })}
+    ${Input({
+    id: 'passwordReg', placeholder: 'Senha', type: 'password', name: 'password',
+  })}
+    ${Button({
+    class: 'register', title: 'Registrar', id: 'button', onClick: buttonRegister,
+  })}
+    </form>
+    <a href='#home'>Voltar</a>
+    </main>
+  `;
+
   return template;
 }
 
-function goToLogin() {
-  window.location.hash = '#home';
-}
+// function goToLogin() {
+//   window.location.hash = '#home';
+// }
 
 function buttonRegister() {
   const email = document.querySelector('.js-email-input').value;
